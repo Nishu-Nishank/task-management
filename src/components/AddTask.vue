@@ -85,18 +85,14 @@ export default {
         attachment: [],
         estimatedTime: "",
         board: "",
-        labels: [],
       },
       newLabel: "",
     });
     const uploadFile = (event) => {
       addTaskData.task.attachment.push(event.target.files[0]);
     };
-    const deleteAttachment = () => {
-      addTaskData.task.attachment = [];
-    };
     const removeAttachment = () => {
-      addTaskData.task.attachment = null;
+      addTaskData.task.attachment = [];
     };
     const createTask = () => {
       if (addTaskData.task.board === "Pending") {
@@ -121,7 +117,6 @@ export default {
       store,
       uploadFile,
       removeAttachment,
-      deleteAttachment,
       createTask,
     };
   },

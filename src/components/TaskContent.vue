@@ -51,11 +51,11 @@
     </div>
     <div class="p-1">
       <p class="font-bold">Attachment:</p>
-      <p>{{ element.attachment.length }}</p>
+      <p>{{ element.attachment?.length }}</p>
     </div>
-    <p class="text-blue-500 font-bold cursor-pointer">View Attachment</p>
+    <p class="text-blue-500 font-bold cursor-pointer" @click="openPDF(element)">View Attachment</p>
   </div>
-  <EditTask v-if="openEditModal" :updateData="element" :closeModal="closeModal"/>
+  <EditTask v-if="openEditModal" :updateData="element" @closeModal="closeModal"/>
 </template>
 <script>
 import { ref } from "vue";
@@ -77,7 +77,10 @@ export default {
     const closeModal =()=>{
       openEditModal.value = false;
     }
-    return { editTask, openEditModal, closeModal };
+    const openPDF = (element) => {
+    window.open(element.attachment[0], '_blank');
+  };
+    return { editTask, openEditModal, closeModal, openPDF };
   },
 };
 </script>

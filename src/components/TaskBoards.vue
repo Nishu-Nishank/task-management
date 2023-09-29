@@ -9,7 +9,7 @@
       <draggable
         v-model="taskBoardData.pending"
         group="people"
-        class="max-w-full max-h-full"
+        class="w-full h-full"
         @start="drag = true"
         @end="drag = false"
         @change="changeBoard"
@@ -36,7 +36,7 @@
       <draggable
         v-model="taskBoardData.processing"
         group="people"
-        class="max-w-full max-h-full"
+        class="w-full h-full"
         @start="drag = true"
         @end="drag = false"
         @change="changeBoard"
@@ -63,7 +63,7 @@
       <draggable
         v-model="taskBoardData.done"
         group="people"
-        class="max-w-full max-h-full"
+        class="w-full h-full"
         @start="drag = true"
         @end="drag = false"
         @change="changeBoard"
